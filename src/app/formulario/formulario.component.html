@@ -6,9 +6,10 @@
     <form [formGroup]="cursoForm" (ngSubmit)="onSubmit()">
       <ion-input formControlName="curso" [ngClass]="{ 'is-invalid': cursoForm.get('curso')!.invalid && cursoForm.get('curso')?.touched }" color="light" label="Nombre" label-placement="floating" fill="outline" placeholder="Curso" class="ion-margin-bottom" />
       <ion-input formControlName="puntos" [ngClass]="{ 'is-invalid': cursoForm.get('puntos')!.invalid && cursoForm.get('puntos')?.touched }" color="light" label="Puntos" label-placement="floating" fill="outline" placeholder="Curso" />
+      <ion-button id="actionSheet" type="submit" class="ion-margin-bottom ion-margin-end ion-margin-top ion-margin-start" color="light" fill="outline" size="large" expand="full">Añadir</ion-button>
     </form>
   </ion-card-content>
-  <ion-button id="actionSheet" type="submit" class="ion-margin-bottom ion-margin-end ion-margin-top ion-margin-start" color="light" fill="outline" size="large" expand="full">Añadir</ion-button>
+  
   
 </ion-card>
 <div *ngIf="cursoForm.get('curso')!.invalid || cursoForm.get('puntos')!.invalid" class="invalid-feedback">

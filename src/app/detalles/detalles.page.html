@@ -1,13 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>detalles</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalles</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-card color="dark" class="ion-margin-bottom ion-margin-end ion-margin-top ion-margin-start">
+  <ion-card-header>
+    <ion-card-title>Curso</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <!-- Utiliza [(ngModel)] para enlazar los valores de los ion-input -->
+    <ion-input [(ngModel)]="curso.nombre" color="light" fill="outline" class="ion-margin-bottom"></ion-input>
+    <ion-input [(ngModel)]="curso.puntos" color="light" fill="outline"></ion-input>
+  </ion-card-content>
+</ion-card>

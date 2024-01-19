@@ -8,16 +8,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormularioComponent  implements OnInit {
 
-  @Output() nombreCurso = new EventEmitter<string>();
-  @Output() puntosCurso = new EventEmitter<number>();
+  @Output() curso = new EventEmitter<any>();
   cursoForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 
   añadirCurso(curso: string, puntos: number) {
 
-    this.nombreCurso.emit(curso);
-    this.puntosCurso.emit(puntos);
+    this.curso.emit({nombre: curso, puntos: puntos, imagen: null});
 
   }
   
@@ -30,7 +28,7 @@ export class FormularioComponent  implements OnInit {
 
   onSubmit() {
     if (this.cursoForm.valid) {
-      this.añadirCurso(this.cursoForm.value.curso, this.cursoForm.value.puntos);
+      this.añadirCurso(this.cursoForm.value.curso, parseInt(this.cursoForm.value.puntos));
     }
   }
 
