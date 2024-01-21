@@ -4,7 +4,7 @@
         <ion-list-header color="dark" class="ion-padding" lines="full">
             <ion-title size="large">Lista de cursos</ion-title>
         </ion-list-header>
-        <ion-item [routerLink]="['/detalles']" [state]="{ curso: curso }" color="dark" *ngFor="let curso of cursosAnadidos$ | async">
+        <ion-item [routerLink]="['/detalles', curso.id]" color="dark" *ngFor="let curso of cursosAnadidos$ | async">
           <ion-label>{{curso.nombre}}</ion-label>
           <ion-label>{{curso.puntos}}</ion-label>
         </ion-item>

@@ -1,10 +1,13 @@
-<ion-card color="dark" class="ion-margin-bottom ion-margin-end ion-margin-top ion-margin-start">
+<ion-card color="dark" class="ion-margin-bottom ion-margin-end ion-margin-start">
   <ion-card-header>
     <ion-card-title>Curso</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <!-- Utiliza [(ngModel)] para enlazar los valores de los ion-input -->
-    <ion-input [(ngModel)]="curso.nombre" color="light" fill="outline" class="ion-margin-bottom"></ion-input>
-    <ion-input [(ngModel)]="curso.puntos" color="light" fill="outline"></ion-input>
+    <ion-input #inputNombre (ionChange)="modificarNombre($event)" [(ngModel)]="curso.nombre" color="light" fill="outline" class="ion-margin-bottom" disabled="true"></ion-input>
+    <ion-input #inputPuntos (ionChange)="modificarPuntos($event)" [(ngModel)]="curso.puntos" color="light" fill="outline" disabled="true"></ion-input>
+    <ion-button (click)="inputNombre.disabled=!inputNombre.disabled; inputPuntos.disabled=!inputPuntos.disabled" class="ion-margin-bottom ion-margin-end ion-margin-top ion-margin-start" color="light" fill="outline" size="large">Modificar</ion-button>
+    <ion-button (click)="borrarCurso()" class="ion-margin-bottom ion-margin-end ion-margin-top ion-margin-start" color="light" fill="outline" size="large">Eliminar</ion-button>
+    <ion-img src="assets/img/camera.jpg"/>
   </ion-card-content>
 </ion-card>
+
